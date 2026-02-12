@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:27:03 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/04 17:25:40 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:44:17 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@
 # include <limits.h>
 # include <stdbool.h>
 # include <stdarg.h>
+
+//estructura boliviana, 0 y 1
+
+typedef int  t_bool;
+# define TRUE 1
+# define FALSE 0
+
 
 int		ft_isalnum(char x);
 int		ft_isalpha(int x);
@@ -64,5 +71,7 @@ int		print_string(char *str);
 int		print_char(char c);
 size_t	print_pointer(size_t ptr);
 size_t	print_hex(size_t n, int upper);
+void	ft_error(char *str, t_bool e);
+void	ft_clean_error(char *str, t_bool e, void *to_free);
 
 #endif 

@@ -6,7 +6,7 @@
 #    By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/04 17:27:05 by alaorden          #+#    #+#              #
-#    Updated: 2026/02/04 17:41:21 by alaorden         ###   ########.fr        #
+#    Updated: 2026/02/11 18:34:45 by alaorden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ LIBFT_DIR= libft /*dirección de libft?*/
 LIBFT = $(LIBFT_DIR)/libff.a
 
 CC= CC
-CFLAGS= -Wall -Werror -Wextra -g /*prq -g ?
+CFLAGS= -Wall -Werror -Wextra -g /*prq -g ? devuelve la linea del codigo
 
-SRC= /*llamar a los programas SORCE
+SRC= /*define los directorios SORCE
 
 OBJ = $(SRC:.c=.o)
 
@@ -43,6 +43,7 @@ fclean: clean
 
 re: fclean all
 
-.DEFAULT_GOAL: all /* que hace esto?
+.DEFAULT_GOAL: all /*ejecuta todo
 
-.PHONY: all clean fclean re /*eh?
+.PHONY: all clean fclean re /*para que no haya problema 
+/*por si un archivo se llama igual que un comando del makefile
