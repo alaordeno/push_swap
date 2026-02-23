@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miaviles <miaviles@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:27:03 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/12 17:44:17 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:23:16 by miaviles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ size_t	print_pointer(size_t ptr);
 size_t	print_hex(size_t n, int upper);
 void	ft_error(char *str, t_bool e);
 void	ft_clean_error(char *str, t_bool e, void *to_free);
+long	ft_atol(const char *str);
 
 #endif 

@@ -3,20 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miaviles <miaviles@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/12 18:54:22 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/17 18:26:51 by miaviles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_limits(char *num_str) //? num_str convierte numeros en string
+void	check_repeated(int *array, int count)
 {
+	int	i;
+	int	j;
+
+	i = 0;
+	while (1 < count - 1)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (array[i] == array[j])
+				ft_clean_error("Error\n", TRUE, array);
+			j++;	
+		}
+	i++;
+}
+
+
+void	check_limits(char *num_str)
+{ 
 	long	num;
 	
-	num = ft_atol
+	num = ft_atol(num_str);
+	if (num > INT_MAX || num < INT_MIN)
+		ft_clean_error("Error\n", TRUE, num_str);
 }
 
 void	fill_array(int argc, char **argv, int *array)
@@ -36,12 +57,12 @@ void	fill_array(int argc, char **argv, int *array)
 		j = 0;
 		while (split[j])
 		{
-			check_limits(split[j])
+			check_limits(split[j]);
 		}	
 	}
 }
 
-static void	check_imput_validity(char *s, int *i) // !funcion creada con ia, revisar si no peta //!, 
+static void	check_input_validity(char *s, int *i) // !funcion creada con ia, revisar si no peta //!, 
 {
 	if (s[*i] == '+' || s[*i] == '-') //si es signo avanzamos
 		(*i)++;
@@ -89,7 +110,8 @@ int	*parse_input(int argc, char **argv, int	*count) //poner en el header
 		ft_error("Error\n", TRUE);
 	array = (int *)malloc(sizeof(int) * (*count));
 	if (!array)
-		ft_error("Error\n", TRUE); //? el true tieme que ser si,pre en mayusculas?
+		ft_error("Error\n", TRUE);
 	fill_array(argc, argv, array);
-	
+	check_repeated(array, *count);
+	return (array);
 }

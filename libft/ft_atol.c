@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miaviles <miaviles@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:32:08 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/12 18:46:36 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:21:46 by miaviles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@ long	ft_atol(const char *str)
 	{
 		if(str[count] == '-')
 			sign *= -1
-	}	 
+	}
+	while (ft_isdigit(str[count]))
+	{
+		res = res * 10 + (str[count] - '0');
+		count++;
+	}
+	return (res * sign);
 }

@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_bubblesort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miaviles <miaviles@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 18:29:45 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/17 17:47:07 by miaviles         ###   ########.fr       */
+/*   Created: 2026/02/20 21:18:34 by miaviles          #+#    #+#             */
+/*   Updated: 2026/02/20 21:25:48 by miaviles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-# include <limits.h> //libreria del intmax y el intmin
-
-typedef struct s_node //empezamos a crear la estructura de los nodos
+void	ft_bubblesort(int *array, int count)
 {
-	int				data;
-	int				s_index;
-	struct s_node	*next; //estructura de las listas
-}	t_node;
+	int	i;
+	int	v;
+	int	temp;
 
-typedef struct s_stack
-{
-	t_node	*head;
-	int		size;	
-}	t_stack;
-
-//IR PONIENDO LAS FUNCIOANES
-
-#endif
+	if (!array || count <= 1)
+		return ;
+	v = 1;
+	while (v)
+	{
+		v = 0;
+		i = 0;
+		while (i < count - 1)
+		{
+			if (array[i] > array[i + 1])
+			{
+				temp = array[i];
+				array[i] = array[i + 1];
+				v = 1;
+			}
+			i++;
+		}
+		count--;
+	}
+}
