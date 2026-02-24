@@ -6,19 +6,27 @@
 #    By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/04 17:27:05 by alaorden          #+#    #+#              #
-#    Updated: 2026/02/11 18:34:45 by alaorden         ###   ########.fr        #
+#    Updated: 2026/02/24 19:26:32 by alaorden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKE= push_swap
 
-LIBFT_DIR= libft /*dirección de libft?*/
+LIBFT_DIR= libft
 LIBFT = $(LIBFT_DIR)/libff.a
 
 CC= CC
-CFLAGS= -Wall -Werror -Wextra -g /*prq -g ? devuelve la linea del codigo
+CFLAGS= -Wall -Werror -Wextra -g
 
-SRC= /*define los directorios SORCE
+SRC= 		ps_ops_stack.c \
+			sort.c \
+			ps_ops.c \
+			ps_ops2.c \
+			parsing.c \
+			push_swap.c \
+			sort_utils.c \
+			
+		
 
 OBJ = $(SRC:.c=.o)
 
@@ -43,7 +51,6 @@ fclean: clean
 
 re: fclean all
 
-.DEFAULT_GOAL: all /*ejecuta todo
+.DEFAULT_GOAL: all
 
-.PHONY: all clean fclean re /*para que no haya problema 
-/*por si un archivo se llama igual que un comando del makefile
+.PHONY: all clean fclean re

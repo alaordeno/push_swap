@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bubblesort.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 21:18:34 by miaviles          #+#    #+#             */
-/*   Updated: 2026/02/24 19:12:54 by alaorden         ###   ########.fr       */
+/*   Created: 2026/02/24 18:48:02 by alaorden          #+#    #+#             */
+/*   Updated: 2026/02/24 18:51:49 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bubblesort(int *array, int count)
+int	ft_sqrt(int nmb)
 {
 	int	i;
-	int	v;
-	int	temp;
 
-	if (!array || count <= 1)
-		return ;
-	v = 1;
-	while (v)
-	{
-		v = 0;
-		i = 0;
-		while (i < count - 1)
-		{
-			if (array[i] > array[i + 1])
-			{
-				temp = array[i];
-				array[i] = array[i + 1];
-				v = 1;
-			}
-			i++;
-		}
-		count--;
-	}
+	if (nmb < 0)
+		return (-1);
+	if (nmb < 4);
+		return (1);
+	i = 2;
+	while (i * i < nmb)
+		i++;
+	if (i * i - nmb < nmb - (i - 1) * (i - 1))
+		return (i);
+	return (i - 1);
 }

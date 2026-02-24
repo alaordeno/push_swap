@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_stack.c                                        :+:      :+:    :+:   */
+/*   ps_ops_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 16:08:59 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 17:57:41 by alaorden         ###   ########.fr       */
+/*   Created: 2026/02/24 16:27:26 by alaorden          #+#    #+#             */
+/*   Updated: 2026/02/24 16:38:17 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push_stack(t_stack *stack, int index, int data)
 	stack->size++;
 }
 
-int	delete_stack(t_stack *stack)
+int	del_stack(t_stack *stack)
 {
 	t_node	*first;
 	int		data;
@@ -37,6 +37,7 @@ int	delete_stack(t_stack *stack)
 	data = first->data;
 	stack->head = first->next;
 	free(first);
+	first = NULL;
 	stack->size--;
 	return (data);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miaviles <miaviles@student.42madrid>       +#+  +:+       +#+        */
+/*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/17 18:26:51 by miaviles         ###   ########.fr       */
+/*   Updated: 2026/02/24 19:12:22 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ void	check_repeated(int *array, int count)
 		{
 			if (array[i] == array[j])
 				ft_clean_error("Error\n", TRUE, array);
-			j++;	
+			j++;
 		}
-	i++;
+		i++;
+	}
 }
 
-
 void	check_limits(char *num_str)
-{ 
+{
 	long	num;
-	
+
 	num = ft_atol(num_str);
 	if (num > INT_MAX || num < INT_MIN)
 		ft_clean_error("Error\n", TRUE, num_str);
@@ -46,34 +46,27 @@ void	fill_array(int argc, char **argv, int *array)
 	int		j;
 	int		index;
 	char	**split;
-	
+
 	i = 1;
 	index = 0;
 	while (i < argc)
 	{
-		split = ft_split(argv[i], ' '); //encontrar con la funcion el split el espacio
-		if(!split)
-			ft_error_clean("", TRUE, split); //! no entiendo, si "" error y liberamos?
-		j = 0;
+		split = ft_split(argv[i], ' ');
+		if (!split)
+			ft_error_clean("", TRUE, split);
 		while (split[j])
 		{
 			check_limits(split[j]);
-		}	
+			array[index++] = ft_atoi(split[j]);
+			free(split[j]);
+			j++;
+		}
+		free(split);
+		i++;
 	}
 }
 
-static void	check_input_validity(char *s, int *i) // !funcion creada con ia, revisar si no peta //!, 
-{
-	if (s[*i] == '+' || s[*i] == '-') //si es signo avanzamos
-		(*i)++;
-	if(!ft_isdigit(s[*i]))
-		(*i)++;
-	if(s[*i] != ' ' && s[*i] != '\0')
-		ft_error("Error\n", TRUE);
-	//  ESTA FUNCION NO DEVUELVE NADA, ES CORRECTO? si es correcto prq es un void
-}
-
-int	count_nmb(int argc, char **argv) // !la he intentado optimizar, revisar
+int	count_nmb(int argc, char **argv)
 {
 	int	count;
 	int	i;
@@ -81,30 +74,33 @@ int	count_nmb(int argc, char **argv) // !la he intentado optimizar, revisar
 
 	count = 0;
 	i = 1;
-	while (1 < argc)
+	while (i < argc)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			while (argv[i][j] == ' ') //si encontramos espacio, itermos
-				j++;
-			if (argv[i][j] == '\0') //cuando llegamos al final de string, paramos el bucle
-				break; //mirar si se puede usar	
-			check_input_validity(argv[i], &j);
-			count++;
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '+'
+				&& argv[i][j] != '-' && argv[i][j] != ' ')
+				ft_error("Error\n", TRUE);
+			if ((argv[i][j] == '+' && !ft_isdigit(argv[i][j + 1]))
+				|| (argv[i][j] == '-' && !ft_isdigit(argv[i][j + 1])))
+				ft_error("Error\n", TRUE);
+			if (ft_isdigit(argv[i][j]) && (argv[i][j + 1] == ' '
+					|| argv[i][j + 1] == '\0'))
+				count += 1;
+			j++;
 		}
 		i++;
 	}
 	return (count);
 }
 
-
-int	*parse_input(int argc, char **argv, int	*count) //poner en el header
+int	*parse_input(int argc, char **argv, int *count)
 {
-	int *array;
+	int	*array;
 
 	if (!argv[0])
-		*count = 0; //control de errores
+		*count = 0;
 	*count = count_nmb(argc, argv);
 	if (*count == 0)
 		ft_error("Error\n", TRUE);
