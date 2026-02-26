@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:56:22 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 17:01:25 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:44:28 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	free_stack(t_stack *stack)
 	if (!stack)
 		return ;
 	while (stack)
-		del_stack(stack);
+		delete_stack(stack);
 }
 
 void	sort(t_stack *stack_a, t_stack *stack_b, int *num, int len)

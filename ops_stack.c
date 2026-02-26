@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:08:59 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 17:57:41 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:10:25 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	delete_stack(t_stack *stack)
 	data = first->data;
 	stack->head = first->next;
 	free(first);
+	first = NULL;
 	stack->size--;
 	return (data);
 }

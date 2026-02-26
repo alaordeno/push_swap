@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 18:15:23 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 18:45:46 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:43:48 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	simple_sort(t_stack *stack, int len)
 	if (is_stack_sorted(stack))
 		return ;
 	min_s_index = find_min_index(stack);
-	c = count_index(stack->head, min_s_index);
+	c = count_ind(stack->head, min_s_index);
 	if (is_rot_sort(stack))
 	{
 		if (c < len - c)

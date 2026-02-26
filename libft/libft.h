@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:27:03 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 18:52:15 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:06:58 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-int		ft_printf(const char *format, ...);
 int		print_format(va_list args, char format);
 int		print_string(char *str);
 int		print_char(char c);
@@ -74,7 +73,10 @@ size_t	print_hex(size_t n, int upper);
 void	ft_error(char *str, t_bool e);
 void	ft_clean_error(char *str, t_bool e, void *to_free);
 long	ft_atol(const char *str);
-int		ft_sqrt(int nmb)
+int		ft_sqrt(int nmb);
+void	ft_bubblesort(int *array, int count);
+int		ft_index(int n, int *array);
+
 
 
 #endif 

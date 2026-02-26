@@ -6,13 +6,13 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:29:12 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 19:15:39 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:53:19 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_ps(t_stack *stack_a, t_stack *stack_b, int array, int size)
+void	init_ps(t_stack *stack_a, t_stack *stack_b, int *array, int size)
 {
 	int		i;
 	t_node	*temp;
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
-	int		array;
+	int		*array;
 
 	if (argc == 1)
 		return (0);

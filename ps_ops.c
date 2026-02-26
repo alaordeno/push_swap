@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:33:40 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 17:54:02 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:34:56 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ops_push(t_stack *stack1, t_stack *stack2, char x, t_bool b)
 	if (stack1->head == NULL)
 		return ;
 	index = stack1->head->s_index;
-	data = del_stack(stack1);
+	data = delete_stack(stack1);
 	push_stack(stack2, index, data);
 	if (b)
 	{

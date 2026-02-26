@@ -5,39 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/04 17:27:05 by alaorden          #+#    #+#              #
-#    Updated: 2026/02/24 19:26:32 by alaorden         ###   ########.fr        #
+#    Created: 2026/02/26 18:02:59 by alaorden          #+#    #+#              #
+#    Updated: 2026/02/26 18:04:26 by alaorden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MAKE= push_swap
+NAME= push_swap
 
 LIBFT_DIR= libft
-LIBFT = $(LIBFT_DIR)/libff.a
+LIBFT = $(LIBFT_DIR)/libft.a
 
-CC= CC
+CC= cc
 CFLAGS= -Wall -Werror -Wextra -g
 
-SRC= 		ps_ops_stack.c \
-			sort.c \
-			ps_ops.c \
-			ps_ops2.c \
-			parsing.c \
-			push_swap.c \
-			sort_utils.c \
-			
-		
+SRC=		ps_ops.c\
+			ps_ops2.c\
+			parcing.c\
+			sort_utils.c\
+			sort.c\
+			ops_stack.c\
+			push_swap.c
 
 OBJ = $(SRC:.c=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ) push_swap.h
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
-	cp $(LIBFT) $(NAME)
+	
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -o $@ $< -c

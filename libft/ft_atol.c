@@ -6,11 +6,9 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:32:08 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 18:54:06 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:12:13 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* es igual que el atoi pero es array to long  */
 
 #include "libft.h"
 

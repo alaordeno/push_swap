@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 19:12:22 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:41:17 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	fill_array(int argc, char **argv, int *array)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			ft_error_clean("", TRUE, split);
+			ft_clean_error("", TRUE, split);
+		j = 0;	
 		while (split[j])
 		{
 			check_limits(split[j]);

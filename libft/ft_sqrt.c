@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 18:48:02 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/24 18:51:49 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/02/26 17:06:26 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_sqrt(int nmb)
 
 	if (nmb < 0)
 		return (-1);
-	if (nmb < 4);
+	if (nmb < 4)
 		return (1);
 	i = 2;
 	while (i * i < nmb)
