@@ -6,66 +6,11 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 17:41:17 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 16:05:12 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	check_repeated(int *array, int count)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (1 < count - 1)
-	{
-		j = i + 1;
-		while (j < count)
-		{
-			if (array[i] == array[j])
-				ft_clean_error("Error\n", TRUE, array);
-			j++;
-		}
-		i++;
-	}
-}
-
-void	check_limits(char *num_str)
-{
-	long	num;
-
-	num = ft_atol(num_str);
-	if (num > INT_MAX || num < INT_MIN)
-		ft_clean_error("Error\n", TRUE, num_str);
-}
-
-void	fill_array(int argc, char **argv, int *array)
-{
-	int		i;
-	int		j;
-	int		index;
-	char	**split;
-
-	i = 1;
-	index = 0;
-	while (i < argc)
-	{
-		split = ft_split(argv[i], ' ');
-		if (!split)
-			ft_clean_error("", TRUE, split);
-		j = 0;	
-		while (split[j])
-		{
-			check_limits(split[j]);
-			array[index++] = ft_atoi(split[j]);
-			free(split[j]);
-			j++;
-		}
-		free(split);
-		i++;
-	}
-}
 
 int	count_nmb(int argc, char **argv)
 {
@@ -94,6 +39,61 @@ int	count_nmb(int argc, char **argv)
 		i++;
 	}
 	return (count);
+}
+
+void	check_limits(char *num_str)
+{
+	long	num;
+
+	num = ft_atol(num_str);
+	if (num > INT_MAX || num < INT_MIN)
+		ft_clean_error("Error\n", TRUE, num_str);
+}
+
+void	check_repeated(int *array, int count)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < count - 1)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (array[i] == array[j])
+				ft_clean_error("Error\n", TRUE, array);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	fill_array(int argc, char **argv, int *array)
+{
+	int		i;
+	int		j;
+	int		index;
+	char	**split;
+
+	i = 1;
+	index = 0;
+	while (i < argc)
+	{
+		split = ft_split(argv[i], ' ');
+		if (!split)
+			ft_clean_error("", TRUE, split);
+		j = 0;
+		while (split[j])
+		{
+			check_limits(split[j]);
+			array[index++] = ft_atoi(split[j]);
+			free(split[j]);
+			j++;
+		}
+		free(split);
+		i++;
+	}
 }
 
 int	*parse_input(int argc, char **argv, int *count)

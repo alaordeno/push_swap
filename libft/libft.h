@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:27:03 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 17:06:58 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:55:25 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@
 
 //estructura boliviana, 0 y 1
 
-typedef int  t_bool;
+typedef int	t_bool;
 # define TRUE 1
 # define FALSE 0
-
 
 int		ft_isalnum(char x);
 int		ft_isalpha(int x);
@@ -66,17 +65,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 int		print_format(va_list args, char format);
-int		print_string(char *str);
-int		print_char(char c);
-size_t	print_pointer(size_t ptr);
-size_t	print_hex(size_t n, int upper);
 void	ft_error(char *str, t_bool e);
 void	ft_clean_error(char *str, t_bool e, void *to_free);
 long	ft_atol(const char *str);
 int		ft_sqrt(int nmb);
 void	ft_bubblesort(int *array, int count);
 int		ft_index(int n, int *array);
-
-
 
 #endif 

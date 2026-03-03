@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:29:45 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 18:00:15 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 15:54:01 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 # include <limits.h> 
 
-typedef struct s_node 
+typedef struct s_node
 {
 	int				data;
 	int				s_index;
