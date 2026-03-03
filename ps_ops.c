@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:33:40 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 17:34:56 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 19:13:14 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ops_rotate(t_stack *stack, char x, t_bool b)
 	t_node	*current;
 	t_node	*temp;
 
-	if (stack->head == NULL || stack->head->next == NULL)
+	if (!stack || !stack->head || !stack->head->next)
 		return ;
 	temp = stack->head;
 	stack->head = temp->next;

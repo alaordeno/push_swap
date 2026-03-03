@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/03 16:05:12 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:09:52 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	count_nmb(int argc, char **argv)
 				|| (argv[i][j] == '-' && !ft_isdigit(argv[i][j + 1])))
 				ft_error("Error\n", TRUE);
 			if (ft_isdigit(argv[i][j]) && (argv[i][j + 1] == ' '
-					|| argv[i][j + 1] == '\0'))
+				|| argv[i][j + 1] == '\0'))
 				count += 1;
 			j++;
 		}

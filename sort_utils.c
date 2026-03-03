@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 18:15:23 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 17:43:48 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/03 19:33:03 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ void	k_sort1(t_stack *stack_a, t_stack *stack_b, int len)
 			i++;
 		}
 		else
+		{
 			ops_rotate(stack_a, 'a', TRUE);
+		}
 	}
 }
 
@@ -123,3 +125,63 @@ void	k_sort2(t_stack *stack_a, t_stack *stack_b, int len)
 		ops_push(stack_b, stack_a, 'a', TRUE);
 	}
 }
+
+
+//  void	k_sort1(t_stack *stack_a, t_stack *stack_b, int length)
+// {
+// 	int	i;
+// 	int	range;
+
+// 	i = 0;
+// 	range = ft_sqrt(length) * 14 / 10;
+// 	while (stack_a->head)
+// 	{
+// 		if (stack_a->head->s_index <= i)
+// 		{
+// 			ops_push(stack_a, stack_b, 'b', TRUE);
+// 			i++;
+// 		}
+// 		else if (stack_a->head->s_index <= i + range)
+// 		{
+// 			ops_push(stack_a, stack_b, 'b', TRUE);
+// 			i++;
+// 			if (!(stack_a->head->s_index <= i + range))
+// 				ops_rotate_both(stack_a, stack_b);
+// 			else
+// 				ops_rotate(stack_b, 'b', TRUE);
+// 		}
+// 		else
+// 		{
+// 			ops_rotate(stack_a, 'a', TRUE);
+// 			printf("s_index: %d  length: %d\n", stack_b->head->s_index, length);
+// 		}
+// 	}
+// }
+
+// void	k_sort2(t_stack *stack_a, t_stack *stack_b, int length)
+// {
+// 	int	rb_count;
+// 	int	rrb_count;
+
+// 	while (length - 1 >= 0)
+// 	{
+// 		rb_count = count_ind(stack_b->head, length - 1);
+// 		rrb_count = (length + 3) - rb_count;
+// 		if (rb_count <= rrb_count)
+// 		{
+// 			while (stack_b->head->s_index != length - 1) {
+// 				printf("s_index: %d  length: %d\n", stack_b->head->s_index, length);
+// 				ops_rotate(stack_b, 'b', TRUE);
+// 			}
+// 			ops_push(stack_b, stack_a, 'a', TRUE);
+// 			length--;
+// 		}
+// 		else
+// 		{
+// 			while (stack_b->head->s_index != length - 1)
+// 				ops_reverse_rotate(stack_b, 'b', TRUE);
+// 			ops_push(stack_b, stack_a, 'a', TRUE);
+// 			length--;
+// 		}
+// 	}
+// }
