@@ -6,11 +6,23 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:29:12 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/04 17:40:21 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:51:44 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+** -------------------------------------------------------------------------
+** Function: init_ps
+** Description: Initializes both stacks and populates Stack A with the 
+** parsed numbers. It pushes elements in reverse order so the first input 
+** argument ends up at the top (head) of the stack. Then, it uses bubble 
+** sort on the integer array to create a sorted reference. Finally, it 
+** assigns a target index (s_index) to each node based on its position 
+** in the sorted array, simplifying the numbers for the K-Sort algorithm.
+** -------------------------------------------------------------------------
+*/
 
 void	init_ps(t_stack *stack_a, t_stack *stack_b, int *array, int size)
 {

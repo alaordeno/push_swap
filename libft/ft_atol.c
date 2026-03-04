@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:32:08 by alaorden          #+#    #+#             */
-/*   Updated: 2026/02/26 17:12:13 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 18:26:20 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ long	ft_atol(const char *str)
 	{
 		if (str[count] == '-')
 			sign *= -1;
+		count++;
 	}
 	while (ft_isdigit(str[count]))
 	{
