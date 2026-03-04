@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/04 16:32:29 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 20:00:22 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,14 @@ int	count_nmb(int argc, char **argv)
 	return (count);
 }
 
-void	check_limits(char *num_str)
+t_bool	check_limits(char *num_str)
 {
 	long	num;
 
 	num = ft_atol(num_str);
 	if (num > INT_MAX || num < INT_MIN)
-		ft_clean_error("Error\n", TRUE, num_str);
+		return (0);
+	return (1);
 }
 
 void	check_repeated(int *array, int count)
@@ -69,7 +70,7 @@ void	check_repeated(int *array, int count)
 	}
 }
 
-void	fill_array(int argc, char **argv, int *array)
+void	fill_array(int argc, char **argv, int *array, int *e)
 {
 	int		i;
 	int		j;
@@ -86,7 +87,8 @@ void	fill_array(int argc, char **argv, int *array)
 		j = 0;
 		while (split[j])
 		{
-			check_limits(split[j]);
+			if (check_limits(split[j]) == 0)
+				*e = 1;
 			array[index++] = ft_atoi(split[j]);
 			free(split[j]);
 			j++;
@@ -99,7 +101,9 @@ void	fill_array(int argc, char **argv, int *array)
 int	*parse_input(int argc, char **argv, int *count)
 {
 	int	*array;
+	int e;
 
+	e = 0;
 	if (!argv[0])
 		*count = 0;
 	*count = count_nmb(argc, argv);
@@ -108,7 +112,9 @@ int	*parse_input(int argc, char **argv, int *count)
 	array = (int *)malloc(sizeof(int) * (*count));
 	if (!array)
 		ft_error("Error\n", TRUE);
-	fill_array(argc, argv, array);
+	fill_array(argc, argv, array, &e);
+	if (e)
+		ft_clean_error("Error\n", TRUE, array);
 	check_repeated(array, *count);
 	return (array);
 }

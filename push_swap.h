@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:29:45 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/04 18:27:51 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 20:00:03 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int		main(int argc, char **argv);
 
 /* parcing.c */
 void	check_repeated(int *array, int count);
-void	check_limits(char *num_str);
-void	fill_array(int argc, char **argv, int *array);
+t_bool	check_limits(char *num_str);
+void	fill_array(int argc, char **argv, int *array, int *e);
 int		count_nmb(int argc, char **argv);
 int		*parse_input(int argc, char **argv, int *count);
 
