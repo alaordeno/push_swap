@@ -24,8 +24,6 @@ Run the program by passing a list of integers as arguments. The program will out
 # Example with a specific list of numbers
 ./push_swap 42 -10 99 0 5
 
-# Example counting the number of operations using a random generator
-ARG=$(seq -1000 1000 | shuf -n 100); ./push_swap $ARG | wc -l
 
 Resources and References
 To carry out this project and ensure its correct operation, I have relied on the following resources:
@@ -33,3 +31,5 @@ To carry out this project and ensure its correct operation, I have relied on the
 Artificial Intelligence (AI): An AI assistant (Gemini) was used as a support and tutoring tool. 
 
 External Repositories: Several GitHub repositories from the 42 community were consulted for study purposes. 
+
+Generate random numbers: https://push-swap42-visualizer.vercel.app/

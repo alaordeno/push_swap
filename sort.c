@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 16:56:22 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/03 19:24:38 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:18:27 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,10 @@ void	free_stack(t_stack *stack)
 		delete_stack(stack);
 }
 
-void	sort(t_stack *stack_a, t_stack *stack_b, int *num, int len)
+void	sort(t_stack *stack_a, t_stack *stack_b, int len)
 {
 	if (is_stack_sorted(stack_a))
-	{
-		free_stack(stack_a);
-		ft_clean_error("", FALSE, num);
-	}
+		return ;
 	if (len == 2)
 	{
 		if (stack_a->head->data > stack_a->head->next->data)

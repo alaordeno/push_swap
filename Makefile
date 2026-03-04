@@ -6,7 +6,7 @@
 #    By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/26 18:02:59 by alaorden          #+#    #+#              #
-#    Updated: 2026/02/26 18:04:26 by alaorden         ###   ########.fr        #
+#    Updated: 2026/03/04 17:44:07 by alaorden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ CC= cc
 CFLAGS= -Wall -Werror -Wextra -g
 
 SRC=		ps_ops.c\
-			ps_ops2.c\
 			parcing.c\
 			sort_utils.c\
 			sort.c\

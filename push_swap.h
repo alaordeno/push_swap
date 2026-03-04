@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:29:45 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/03 18:22:49 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:44:43 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		find_min_index(t_stack *stack);
 int		count_ind(t_node *stack, int ind);
 int		is_stack_sorted(t_stack *stack);
 void	free_stack(t_stack *stack);
-void	sort(t_stack *stack_a, t_stack *stack_b, int *num, int len);
+void	sort(t_stack *stack_a, t_stack *stack_b, int len);
 
 /* ps_ops.c */
 void	ops_swap(t_stack *stack, char x, t_bool b);
@@ -63,10 +63,5 @@ void	simple_sort(t_stack *stack, int len);
 void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int len);
 void	k_sort1(t_stack *stack_a, t_stack *stack_b, int len);
 void	k_sort2(t_stack *stack_a, t_stack *stack_b, int len);
-
-/* ps_ops2.c */
-void	ops_swap_both(t_stack *stack_a, t_stack *stack_b);
-void	ops_rotate_both(t_stack *stack_a, t_stack *stack_b);
-void	ops_reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
 
 #endif
