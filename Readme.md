@@ -20,12 +20,12 @@ To compile the project, a `Makefile` is provided. It compiles the source files a
 #### Execution
 Run the program by passing a list of integers as arguments. The program will output the list of operations required to sort the stack.
 
-```bash
+
 # Example with a specific list of numbers
 ./push_swap 42 -10 99 0 5
 
 
-Resources and References
+#### Resources and References
 To carry out this project and ensure its correct operation, I have relied on the following resources:
 
 Artificial Intelligence (AI): An AI assistant (Gemini) was used as a support and tutoring tool. 

@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/04 20:00:22 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:03:49 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	fill_array(int argc, char **argv, int *array, int *e)
 int	*parse_input(int argc, char **argv, int *count)
 {
 	int	*array;
-	int e;
+	int	e;
 
 	e = 0;
 	if (!argv[0])

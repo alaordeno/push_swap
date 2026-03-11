@@ -6,16 +6,20 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 10:25:23 by alaorden          #+#    #+#             */
-/*   Updated: 2025/11/04 19:02:24 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:13:59 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* funcion sta. solo se usa en este archivo
-ft_count_sub → cuenta palabras
-ft_len_sub → mide longitud de cada palabra
-ft_copy_sub → copia la palabra a un nuevo espacio de memoria
-ft_split_clean → limpia si hay errores
-ft_split → junta todo y devuelve el arreglo de palabras */
+/*
+** -------------------------------------------------------------------------
+** Static functions: Only accessible within this file.
+** ft_count_sub   -> Counts the total number of words (substrings).
+** ft_len_sub     -> Measures the length of each individual word.
+** ft_copy_sub    -> Allocates memory and copies a word into it.
+** ft_split_clean -> Frees all allocated memory in case of an error (failsafe).
+** ft_split       -> Orchestrates the process and returns the array of strings.
+** -------------------------------------------------------------------------
+*/
 
 #include "libft.h"
 
