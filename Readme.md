@@ -33,3 +33,4 @@ Artificial Intelligence (AI): An AI assistant (Gemini) was used as a support and
 External Repositories: Several GitHub repositories from the 42 community were consulted for study purposes. 
 
 Generate random numbers: https://push-swap42-visualizer.vercel.app/
+Checker: ARG="3 2 1"; ./push_swap $ARG | ./checker_linux $ARG
