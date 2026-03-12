@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:45:57 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/11 20:01:32 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/12 17:44:59 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,24 @@ int	count_nmb(int argc, char **argv)
 	int	j;
 
 	count = 0;
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
-		j = 0;
-		while (argv[i][j])
+		j = -1;
+		while (argv[i][++j])
 		{
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '+'
 				&& argv[i][j] != '-' && argv[i][j] != ' ')
 				ft_error("Error\n", TRUE);
+			if ((argv[i][j] == '+' || argv[i][j] == '-')
+				&& (j > 0 && argv[i][j - 1] != ' '))
+				ft_error("Error\n", TRUE);
 			if ((argv[i][j] == '+' && !ft_isdigit(argv[i][j + 1]))
 				|| (argv[i][j] == '-' && !ft_isdigit(argv[i][j + 1])))
 				ft_error("Error\n", TRUE);
-			if (ft_isdigit(argv[i][j]) && (argv[i][j + 1] == ' '
-				|| argv[i][j + 1] == '\0'))
+			if (ft_isdigit(argv[i][j]) && is_space_or_null(argv[i][j + 1]))
 				count += 1;
-			/* if (ft_isdigit(argv[i][j]) && !ft_isdigit(argv[i][j + 1]) && ft_isdigit(argv[i][j + 2]))
-				ft_error("Error\n", TRUE); */
-			j++;
 		}
-		i++;
 	}
 	return (count);
 }

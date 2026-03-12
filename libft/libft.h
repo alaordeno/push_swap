@@ -6,7 +6,7 @@
 /*   By: alaorden <alaorden@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:27:03 by alaorden          #+#    #+#             */
-/*   Updated: 2026/03/03 19:29:28 by alaorden         ###   ########.fr       */
+/*   Updated: 2026/03/12 17:44:44 by alaorden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ long	ft_atol(const char *str);
 int		ft_sqrt(int nmb);
 void	ft_bubblesort(int *array, int count);
 int		ft_index(int n, int *array);
+int		is_space_or_null(char c);
 
 #endif 
